@@ -1,9 +1,10 @@
-package main
+package src
 
 import (
 	"fmt"
 	"net/http"
 	"io/ioutil"
+	 "routes"
 )
 
 func main()  {
@@ -12,11 +13,14 @@ func main()  {
 	http.ListenAndServe("localhost:8080", nil)
 }
 
+
 func index(w http.ResponseWriter, r *http.Request)  {
 	bytes, err := ioutil.ReadFile("webapp/index.html")
-	if (err != nil) {
+	fmt.Println(err)
+	if err != nil {
 		fmt.Fprintln(w, err)
 		fmt.Println(err)
 	}
 	fmt.Fprintln(w, string(bytes))
+
 }
