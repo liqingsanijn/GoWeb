@@ -1,7 +1,11 @@
 package routes
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func test()  {
-	fmt.Println("test")
+func Test() {
+	fmt.Println("Test")
 }
+
+
